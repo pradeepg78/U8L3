@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class Algorithm2DArrays {
     /** Return true if target is found at least once in arr; false otherwise.
      *
@@ -164,6 +166,30 @@ public class Algorithm2DArrays {
             }
         }
         return grid;
+    }
+
+    /** Searches through the 2D array wordChart and finds all strings with
+     *  length len; these strings are added to an ArrayList and returned.
+     *  If no strings have that length, return an empty ArrayList
+     *
+     *  @param wordChart  2D array of Strings
+     *  @parram len  the length of strings to search for
+     *  @return  an ArrayList containing all strings in wordChart with length len
+     */
+    public static ArrayList<String> findStringsOfLength(String[][] wordChart, int len)
+    {
+        ArrayList<String> chart = new ArrayList<String> ();
+        for (int r = 0; r < wordChart.length; r++)
+        {
+            for (int c = 0; c < wordChart[0].length; c++)
+            {
+                if (wordChart[r][c].length() == len)
+                {
+                    chart.add(wordChart[r][c]);
+                }
+            }
+        }
+        return chart;
     }
 
 }
